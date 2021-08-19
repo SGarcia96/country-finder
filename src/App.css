@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.App-title {
+  text-align: center;
+  color: aquamarine;
+}
+
+.App-section {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+button {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  background-color: aquamarine;
+  text-align: center;
+  transition: all 0.2s;
+}
+button:hover {
+  background-color: #4095c6;
+}
+
+.input-country {
+  padding: 5px;
+  border-radius: 50px;
+  border-width: 2px;
+  font-family: monospace;
+}
+
+.country-flag {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  margin: 25px;
+}
