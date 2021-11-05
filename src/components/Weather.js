@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getCurrentWeather } from '../services/weather/getCurrentWeather'
+import { Spinner } from '@chakra-ui/spinner';
+import { HStack, Image, Text, SimpleGrid } from "@chakra-ui/react"
 
 export const Weather = ({ capital }) => {
 
@@ -14,12 +16,12 @@ export const Weather = ({ capital }) => {
       
 
     if (weather === undefined) {
-        return <p>Loading...</p>;
+        return <Spinner size="lg" />;
       } else {
         const tempC = weather.current.temp_c
         const tempF = weather.current.temp_f
         const humidity = weather.current.humidity
-        const localTime = weather.location.localTime
+        const localTime = weather.location.localtime
         const conditionURL = weather.current.condition.icon
         const conditionURLFormat = `https://${conditionURL.substr(2)}`
         const conditionText = weather.current.condition.text
@@ -27,14 +29,21 @@ export const Weather = ({ capital }) => {
         const windDirection = weather.current.wind_dir
 
         return (
-          <div>
-            <b>temperature:</b> {tempC} ºC {tempF} ºF
-            <b>humidity:</b> {humidity}
-            <b>local time:</b> {localTime}
-            <img src={conditionURLFormat} alt={conditionText} />
-            <b>wind:</b> {wind} km/h 
-            <b>direction:</b> {windDirection}
-          </div>
+          <HStack as="section" borderWidth="1px" p={3} spacing={6}>
+            <Image 
+              src={conditionURLFormat}
+              alt={conditionText}
+              boxSize="100px"
+              objectFit="cover"
+            />
+            <SimpleGrid columns={2} spacing={2} fontSize="14px">
+              <Text>temperature:</Text> {tempC}ºC | {tempF}ºF
+              <Text>humidity:</Text> {humidity}
+              <Text>local time:</Text> {localTime}
+              <Text>wind:</Text> {wind} km/h 
+              <Text>direction:</Text> {windDirection}
+            </SimpleGrid>
+          </HStack>
         );
       }
 }

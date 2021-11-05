@@ -2,6 +2,7 @@ import { Country } from './Country'
 import { CountrySimple } from './CountrySimple'
 import { useState } from 'react'
 import { Text } from '@chakra-ui/layout'
+import { List } from '@chakra-ui/react'
 
 export const Countries = ({ countries, newSearch }) => {
     const [showCountry, setShowCountry] = useState();
@@ -37,7 +38,7 @@ export const Countries = ({ countries, newSearch }) => {
 
     if (countriesFound.length > 1) {
         return (
-            <ul>
+            <List>
                 {countries
                     .filter(country =>
                         country.name.toLowerCase().includes(newSearch.toLowerCase())
@@ -50,12 +51,12 @@ export const Countries = ({ countries, newSearch }) => {
                             show={show}
                         />
                     ))}
-            </ul>
+            </List>
         )
     }
 
     return (
-        <ul>
+        <List>
             {countries
                 .filter(country =>
                     country.name.toLowerCase().includes(newSearch.toLowerCase())
@@ -70,6 +71,6 @@ export const Countries = ({ countries, newSearch }) => {
                         flag={country.flag}
                     />
                 ))}
-        </ul>
+        </List>
     )
 }

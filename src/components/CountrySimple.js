@@ -1,10 +1,12 @@
+import { ListItem, Button } from "@chakra-ui/react"
+
 export const CountrySimple = ({ name, country, show }) => {
     return (
-        <li key={name}>
+        <ListItem key={name} display="flex" alignItems="center" justifyContent="space-between" borderWidth="1px" p={1} m={1}>
             {name}
-            <button value={country.name} onClick={show}>
+            <Button value={country.name} onClick={show} colorScheme="teal" variant="outline">
                 Show
-            </button>
-        </li>
+            </Button>
+        </ListItem>
     )
 }
