@@ -9,10 +9,10 @@ export const Countries = ({ countries, newSearch }) => {
   console.log('showCountry ' + showCountry)
 
   // show stores in showCountry the Country matched with full name, has full information
-  const show = (event) => {
-    console.log('event show ' + event)
+  const show = (name) => {
+    console.log('show ' + name)
     const countryFound = countries.filter(country =>
-      country.name.includes(event.target.value)
+      country.name === name
     )
     setShowCountry(countryFound[0])
   }
@@ -50,7 +50,7 @@ export const Countries = ({ countries, newSearch }) => {
               key={country.name}
               name={country.name}
               country={country}
-              show={show}
+              show={() => show(country.name)}
             />
           ))}
       </List>
