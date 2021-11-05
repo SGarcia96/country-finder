@@ -19,7 +19,7 @@ export const FilterCountries = ({ newSearch, handleSearchChange }) => {
             id="filter"
             value={newSearch}
             onChange={handleSearchChange}
-            placeholder="Enter country name"
+            placeholder="Type country name"
             variant="flushed"
             colorScheme="tea"
             tabIndex="0"
