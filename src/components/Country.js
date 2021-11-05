@@ -1,7 +1,6 @@
 import { Weather } from './Weather'
 import {
   Stack,
-  Divider,
   Heading,
   Text,
   Box,
@@ -17,7 +16,6 @@ import {
 export const Country = ({ name, capital, population, languages, flag }) => {
   return (
     <Stack>
-      <Divider orientation="vertical"/>
       <Box as="section" maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
         <Image
           src={flag}

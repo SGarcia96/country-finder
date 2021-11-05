@@ -14,7 +14,7 @@ export const Countries = ({ countries, newSearch }) => {
     const countryFound = countries.filter(country =>
       country.name.includes(event.target.value)
     )
-    setShowCountry(countryFound)
+    setShowCountry(countryFound[0])
   }
 
   const countriesFound = countries.filter(country =>
