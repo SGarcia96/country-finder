@@ -6,9 +6,11 @@ import { List } from '@chakra-ui/react'
 
 export const Countries = ({ countries, newSearch }) => {
     const [showCountry, setShowCountry] = useState();
+    console.log("showCountry "+showCountry)
 
     //show stores in showCountry the Country matched with full name, has full information
     const show = (event) => {
+        console.log("event show "+event)
         const countryFound = countries.filter(country => 
             country.name.includes(event.target.value)
         );

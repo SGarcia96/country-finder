@@ -21,6 +21,7 @@ export const FilterCountries = ({ newSearch, handleSearchChange }) => {
             onChange={handleSearchChange}
             placeholder="Enter country name"
             variant="flushed"
+            colorScheme="tea"
             tabIndex="0"
           />
       </InputGroup>
