@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import { getAllCountries } from "./services/countries/getAllCountries"
 import { FilterCountries } from "./components/FIlterCountries"
 import { Countries } from "./components/Countries"
-import "./App.css"
+import { Container, VStack, Heading } from "@chakra-ui/react"
+//import "./App.css"
 
 const App = () => {
   const [countries, setCountries] = useState([])
@@ -19,16 +20,16 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <section className="App-section">
-        <h1 className="App-title">Country Finder</h1>
+    <Container maxW="container.xl" marginTop="6" centerContent>
+      <VStack>
+        <Heading as="h1" size="2xl">Country Finder</Heading>
         <FilterCountries
           newSearch={newSearch}
           handleSearchChange={handleSearchChange}
         />
         <Countries countries={countries} newSearch={newSearch} />
-      </section>
-    </div>
+      </VStack>
+    </Container>
   )
 }
 

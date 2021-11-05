@@ -1,16 +1,17 @@
 import { Country } from './Country'
 import { CountrySimple } from './CountrySimple'
 import { useState } from 'react'
+import { Text } from '@chakra-ui/layout'
 
 export const Countries = ({ countries, newSearch }) => {
     const [showCountry, setShowCountry] = useState();
 
-    //show store in showCountry the Country matched with full name, has full information
+    //show stores in showCountry the Country matched with full name, has full information
     const show = (event) => {
         const countryFound = countries.filter(country => 
             country.name.includes(event.target.value)
         );
-        setShowCountry(countryFound[0]);
+        setShowCountry(countryFound);
     }
 
     const countriesFound = countries.filter(country => 
@@ -18,7 +19,7 @@ export const Countries = ({ countries, newSearch }) => {
     );
 
     if (countriesFound.length >= 10) {
-        return <p>Too many matches, specify another filter</p>;
+        return <Text>Too many matches, specify another filter</Text>;
     }
 
     if (showCountry !== undefined) {
