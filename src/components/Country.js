@@ -1,18 +1,18 @@
-import { Weather } from "./Weather"
-import { 
-  Stack, 
-  Divider, 
-  Heading, 
-  Text, 
-  Box, 
-  Image, 
-  StatGroup, 
-  Stat, 
-  StatLabel, 
+import { Weather } from './Weather'
+import {
+  Stack,
+  Divider,
+  Heading,
+  Text,
+  Box,
+  Image,
+  StatGroup,
+  Stat,
+  StatLabel,
   StatNumber,
-  List, 
+  List,
   ListItem
- } from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 export const Country = ({ name, capital, population, languages, flag }) => {
   return (

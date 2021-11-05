@@ -1,14 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { ChakraProvider } from '@chakra-ui/provider';
-import { extendTheme, ColorModeScript } from "@chakra-ui/react"
-import './index.css'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { ChakraProvider } from '@chakra-ui/provider'
+import { extendTheme, ColorModeScript } from '@chakra-ui/react'
 
-// 2. Extend the theme to include custom colors, fonts, etc
+// Extend the theme to include custom colors, fonts, etc
 const config = {
-  initialColorMode: "light",
-  useSystemColorMode: false,
+  initialColorMode: 'light',
+  useSystemColorMode: false
 }
 
 const theme = extendTheme({ config })
@@ -19,5 +18,4 @@ ReactDOM.render(
     <App />
   </ChakraProvider>,
   document.getElementById('root')
-);
-
+)

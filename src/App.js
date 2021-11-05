@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react"
-import { getAllCountries } from "./services/countries/getAllCountries"
-import { FilterCountries } from "./components/FIlterCountries"
-import { Countries } from "./components/Countries"
-import { Container, VStack, Heading, Box } from "@chakra-ui/react"
-import { Footer } from "./components/Footer"
-import { ToggleDark } from "./components/ToggleDark"
-//import "./App.css"
+import React, { useState, useEffect } from 'react'
+import { getAllCountries } from './services/countries/getAllCountries'
+import { FilterCountries } from './components/FIlterCountries'
+import { Countries } from './components/Countries'
+import { Container, VStack, Heading } from '@chakra-ui/react'
+import { Footer } from './components/Footer'
+import { ToggleDark } from './components/ToggleDark'
 
 const App = () => {
   const [countries, setCountries] = useState([])
-  const [newSearch, setNewSearch] = useState("")
+  const [newSearch, setNewSearch] = useState('')
 
   useEffect(() => {
     getAllCountries().then((countries) => {
