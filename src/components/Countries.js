@@ -9,10 +9,9 @@ export const Countries = ({ countries, newSearch }) => {
   console.log('showCountry ' + showCountry)
 
   // show stores in showCountry the Country matched with full name, has full information
-  const show = (name) => {
-    console.log('show ' + name)
+  const show = (event) => {
     const countryFound = countries.filter(country =>
-      country.name === name
+      country.name.includes(event.target.value)
     )
     setShowCountry(countryFound[0])
   }
